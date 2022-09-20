@@ -1,10 +1,10 @@
 // Assignment code here
 
 // Assigned Variables to all desired options for the password
-var nums = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
-var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var specialChar = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "+", "=", ",", "<", ">", "?"]
+var nums = "1234567890"
+var lowerCase = "abcdefghijklmnopqrstuvwxyz"
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var specialChar = "!@#$%^&*()_-+=?<>"
 
 function generatePassword() {
 
@@ -25,7 +25,7 @@ function generatePassword() {
 
 
   //Console log for testing
-  console.log(Length, incNums, incLowerCase, incUpperCase, incSpecialChar)
+  console.log("Length: ", Length, "Include Numbers: ", incNums, "Include Lower Case: ", incLowerCase, "Include Upper Case: ", incUpperCase, "Include Special Characters: ", incSpecialChar)
 
   //Verify user typed number within parameters
   if(isNaN(Length)==true || Length < 8 || Length > 128) {
@@ -39,7 +39,16 @@ function generatePassword() {
     generatePassword()
   }
 
+  //Create string of characters user chooses
   var charsToUse = [];
+  if(incNums){charsToUse += nums}
+  if(incLowerCase){charsToUse += lowerCase}
+  if(incUpperCase){charsToUse += upperCase}
+  if(incSpecialChar){charsToUse += specialChar}
+
+  //Console Log Character string for testing
+  console.log(charsToUse)
+
 }
 
 // Get references to the #generate element
