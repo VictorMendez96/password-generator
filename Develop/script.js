@@ -5,6 +5,7 @@ var nums = "1234567890"
 var lowerCase = "abcdefghijklmnopqrstuvwxyz"
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var specialChar = "!@#$%^&*()_-+=?<>"
+var password = ""
 
 function generatePassword() {
 
@@ -40,14 +41,29 @@ function generatePassword() {
   }
 
   //Create string of characters user chooses
-  var charsToUse = [];
+  var charsToUse = "";
   if(incNums){charsToUse += nums}
   if(incLowerCase){charsToUse += lowerCase}
   if(incUpperCase){charsToUse += upperCase}
   if(incSpecialChar){charsToUse += specialChar}
 
   //Console Log Character string for testing
-  console.log(charsToUse)
+  console.log("Characters being used for password: ", charsToUse)
+
+  //Create password for User
+  for (let i = 0; i < Length; i++) {
+    var randomIndex = Math.floor(Math.random() * charsToUse.length)
+    var chosenChar = charsToUse[randomIndex]
+    password += chosenChar
+    //Console log for testing
+    console.log("Index: ", randomIndex, "Character: ", chosenChar)
+  }
+
+  //Console log for testing
+  console.log("Password for User: ", password)
+
+  //Pass the value over to writePassword function
+  return password
 
 }
 
