@@ -28,6 +28,6 @@ THEN the password is either displayed in an alert or written to the page
 
 [Github](https://github.com/VictorMendez96/password-generator)
 
-[Deployment](https://victormendez96.github.io/password-generator/Develop/generator.png)
+[Deployment](https://victormendez96.github.io/password-generator/Develop/)
 
 ![Password Generator Example](./Develop/assets/generator.png)
